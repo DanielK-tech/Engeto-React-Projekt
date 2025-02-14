@@ -1,0 +1,27 @@
+.Pets{ 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+   flex-direction: column;
+   width: 300px;
+   height: 30rem;
+   gap: 1rem; 
+   text-align: center;
+   background-color: var(--card-color);
+   border-radius: 10px;
+   transition: 1s;
+   padding: 10px;
+}
+
+.Pets:hover{
+    transform: scale(1.1);
+}
+
+.PetsImage{
+    width: 50%;
+    height: 10rem;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+    transition: transform 1.5s;
+}

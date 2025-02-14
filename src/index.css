@@ -1,0 +1,18 @@
+:root{ 
+  --backgroud-Color: #3f8506; ;
+  --text-Color: #e6b224;
+}
+* { 
+  padding: 0;
+  margin: 0; 
+  box-sizing: border-box;
+} 
+
+/* Místo Body */
+#root{ 
+  display: flex;
+  justify-content: center;
+  font-family: Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif;
+  background-color: var(--backgroud-Color);
+  color: var(--text-Color);
+}
