@@ -1,0 +1,60 @@
+/* CatImageFinder.css */
+.catImageFinder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+.catImageFinder h1 {
+    margin-bottom: 20px;
+}
+
+.catImageFinder form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 300px; /* Nastavte šířku formuláře */
+}
+
+.catImageFinder label {
+    margin-bottom: 8px;
+}
+
+.catImageFinder input {
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.catImageFinder button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.catImageFinder button:hover {
+    background-color: #0056b3;
+}
+
+.catImageFinder .error {
+    color: red;
+    margin-top: 10px;
+}
+
+.catImageFinder .imageContainer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.catImageFinder .catImage {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}

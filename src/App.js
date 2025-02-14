@@ -8,6 +8,8 @@ import Allpets from "./data";
 /**Komponenty */
 import Pets from "./components/Pets";
 import PetsInfo from "./components/PetsInfo";
+import Api from "./pages/Api"
+import ApiList from "./pages/ApiGenrator"
 
 const App = () => {
     const welcomeTextRef = useRef(null);
@@ -65,6 +67,10 @@ const App = () => {
             </section>
             <section className="PetsInfoSection"> 
                 <PetsInfo />
+            </section> 
+            <section> 
+                <Api />
+                <ApiList />
             </section>
         </div>
     );

@@ -1,0 +1,59 @@
+
+.catBreedList {    
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    width: 100%;
+}
+
+.catBreedList h1 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+/** ul **/
+.catBreedList .breeds {
+    width: 10rem;
+  display: inline-block;
+  
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+/** li **/
+.catBreedList .breed-item {
+  
+    margin-bottom: 20px;
+    padding: 15px;    
+    border-radius: 8px;
+    background-color: var(--backgroud-Color)
+} 
+
+/**p **/
+.intro{ 
+    width: 20rem;
+    text-align: center;
+}
+
+.catBreedList .breed-item h3 {
+    margin-top: 0;
+    margin-bottom: 10px;    
+}
+
+.catBreedList .breed-item p {
+    margin-bottom: 8px;
+    
+    
+}
+
+.catBreedList .breed-item code {
+    background-color: var(--Conteiner-color);
+    padding: 2px 5px;
+    border-radius: 4px;
+    
+}
+
+.catBreedList .error {
+    color: red;
+    margin-top: 10px;
+}
