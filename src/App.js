@@ -68,7 +68,7 @@ const App = () => {
             <section className="PetsInfoSection"> 
                 <PetsInfo />
             </section> 
-            <section> 
+            <section className="ApiSection"> 
                 <Api />
                 <ApiList />
             </section>

@@ -66,4 +66,10 @@ h2{
   flex-direction: column;
   align-items: center;
  
+} 
+
+.ApiSection{ 
+  width: 100%;
+  display: flex; 
+  justify-content: center;
 }

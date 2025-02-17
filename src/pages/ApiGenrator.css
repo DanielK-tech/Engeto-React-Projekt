@@ -3,8 +3,9 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    width: 100%;
+    align-items: center;
+   width: 30rem;
+    height: auto;
 }
 
 .catBreedList h1 {
@@ -12,9 +13,14 @@
     text-align: center;
 }
 /** ul **/
-.catBreedList .breeds {
-    width: 10rem;
-  display: inline-block;
+ .breeds {
+    margin-top: 2rem;
+    width: 25rem;
+    gap: 1rem;    
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   
     list-style: none;
     text-align: center;
@@ -56,4 +62,18 @@
 .catBreedList .error {
     color: red;
     margin-top: 10px;
+} 
+
+.toggleButton{ 
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--card-color);
+    color: var(--text-Color);
+    cursor: pointer;
+    transition:  0.5s;
+} 
+
+.toggleButton:hover {
+    background-color: var(--backgroud-Color);
 }

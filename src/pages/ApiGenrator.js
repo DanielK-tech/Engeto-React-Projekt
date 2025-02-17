@@ -5,6 +5,7 @@ const CatBreedList = () => {
     const [breeds, setBreeds] = useState([]); // Stav pro uložení seznamu plemen
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
+    const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
         const fetchBreeds = async () => {
@@ -31,6 +32,10 @@ const CatBreedList = () => {
         fetchBreeds();
     }, []);
 
+      const toggleList = () => {
+          setIsVisible(!isVisible);
+      };
+
     if (isLoading) {
         return <p>Načítám seznam plemen...</p>;
     }
@@ -48,16 +53,22 @@ const CatBreedList = () => {
                 <strong>ID plemene</strong> (např. `beng` pro Bengal, `siam` pro
                 Siamese) do formuláře v předchozí komponentě.
             </p>
-            <ul className="breeds">
-                {breeds.map((breed) => (
-                    <li key={breed.id} className="breed-item">
-                        <h3>{breed.name}</h3>
-                        <p>
-                            <strong>ID plemene:</strong> <code>{breed.id}</code>
-                        </p>
-                    </li>
-                ))}
-            </ul>
+            <button onClick={toggleList} className="toggleButton">
+                {isVisible ? "Skrýt seznam" : "Zobrazit seznam"}
+            </button>
+            {isVisible && (
+                <ul className="breeds">
+                    {breeds.map((breed) => (
+                        <li key={breed.id} className="breed-item">
+                            <h3>{breed.name}</h3>
+                            <p>
+                                <strong>ID plemene:</strong>{" "}
+                                <code>{breed.id}</code>
+                            </p>
+                        </li>
+                    ))}
+                </ul>
+            )}
         </div>
     );
 };

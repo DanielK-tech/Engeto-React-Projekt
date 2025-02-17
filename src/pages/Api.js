@@ -1,5 +1,7 @@
 import "./Api.css"; 
 import React, { useState } from "react";
+/** Komponenta */
+import ApiList from "./ApiGenrator";
 
 const CatImageFinder = () => {
     // 1. Stav pro input pole (klíčové slovo pro vyhledávání)
@@ -69,7 +71,7 @@ const CatImageFinder = () => {
                     onChange={handleInputChange}
                     placeholder="Plemeno kočky"
                 />
-                <button type="submit">Hledej kočku!</button>
+                <button className="button" type="submit">Hledej kočku!</button>
             </form>
             {isLoading && <p>Načítám obrázek...</p>}{" "}
             {/* Zobrazení "Loading..." během načítání */}
