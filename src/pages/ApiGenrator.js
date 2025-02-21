@@ -51,7 +51,7 @@ const CatBreedList = () => {
                 Zde je seznam plemen koček, které by měly fungovat ve
                 vyhledávání. Pro vyhledání obrázku zadejte{" "}
                 <strong>ID plemene</strong> (např. `beng` pro Bengal, `siam` pro
-                Siamese) do formuláře v předchozí komponentě.
+                Siamese) do formuláře.
             </p>
             <button onClick={toggleList} className="toggleButton">
                 {isVisible ? "Skrýt seznam" : "Zobrazit seznam"}

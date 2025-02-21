@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react"; 
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
 /** Styly **/
 import "./App.css";
 /** Obrázky */
@@ -8,10 +8,9 @@ import WelcomePicture from "./img/first.jpg";
 import Allpets from "./data";
 /**Komponenty */
 import Pets from "./components/Pets";
-import PetsInfo from "./components/PetsInfo";
-import Api from "./pages/Api"
-import ApiList from "./pages/ApiGenrator" 
+import PetsInfo from "./components/PetsInfo"; 
 import RouteButton from "./components/RouteButton";
+import  ApiSection  from "./components/ApiSection";
 
 const Home = () => {
     const welcomeTextRef = useRef(null);
@@ -19,25 +18,25 @@ const Home = () => {
     useEffect(() => {
         const paragraph = welcomeTextRef.current; // Získání reference na <p> element
         if (paragraph) {
-            // Kontrola, zda se odstavec načetl
-            const text = paragraph.textContent; // Získáme textový obsah odstavce
+            
+            const text = paragraph.textContent; 
             const words = text.split(" "); // Rozdělíme text na pole slov
             if (words.length > 0) {
                 // Kontrola, zda odstavec obsahuje slova
                 const randomIndex = Math.floor(Math.random() * words.length); // Vygenerujeme náhodný index
                 const randomWord = words[randomIndex]; // Získáme náhodné slovo
-                // Vytvoříme HTML pro odstavec s obaleným červeným slovem
+                // červené slovo
                 const highlightedText = words
                     .map((word, index) => {
                         if (index === randomIndex) {
-                            return `<span style="color: red">${word}</span>`; // Obalíme náhodné slovo do <span>
+                            return `<span style="color: red">${word}</span>`; 
                         } else {
                             return word; // Ostatní slova necháme beze změny
                         }
                     })
                     .join(" "); // Spojíme slova zpět do textu
 
-                paragraph.innerHTML = highlightedText; // Nastavíme upravený HTML obsah odstavce
+                paragraph.innerHTML = highlightedText; 
             }
         }
     }, []);
@@ -74,18 +73,7 @@ const Home = () => {
         </div>
     );
 };
-const ApiSection = () => {
-    return (
-        <div className="MainContainer">
-            <h2>Kočíčí sekce</h2>
-            <section className="ApiSection">
-                <Api />
-                <ApiList />
-            </section>
-            <RouteButton />
-        </div>
-    );
-}; 
+ 
 const App = () => {
     return (
         <Router>

@@ -1,7 +1,6 @@
 import "./Api.css"; 
 import React, { useState } from "react";
-/** Komponenta */
-import ApiList from "./ApiGenrator";
+
 
 const CatImageFinder = () => {
     // 1. Stav pro input pole (klíčové slovo pro vyhledávání)
@@ -13,47 +12,46 @@ const CatImageFinder = () => {
     // 4. Stav pro indikaci načítání dat (pro zobrazení "Loading...")
     const [isLoading, setIsLoading] = useState(false);
 
-    // Funkce pro handlování změny input pole
+    
     const handleInputChange = (event) => {
         setSearchQuery(event.target.value);
     };
 
-    // Funkce pro handlování odeslání formuláře
+    
     const handleSubmit = async (event) => {
-        event.preventDefault(); // Zabránění defaultnímu odeslání formuláře (refresh stránky)
+        event.preventDefault(); 
 
-        // Resetujeme předchozí stav a chyby
+        
         setCatImageUrl(null);
         setError(null);
-        setIsLoading(true); // Nastavíme načítání na true
+        setIsLoading(true); 
 
         try {
-            // 5. Volání The Cat API pomocí fetch
-            // const apiKey = "TVŮJ_API_KLÍČ_ZDE"; 
-            const apiUrl = `https://api.thecatapi.com/v1/images/search?limit=1&breed_ids=${searchQuery}`; // API endpoint s dynamickým searchQuery
+            
+            const apiUrl = `https://api.thecatapi.com/v1/images/search?limit=1&breed_ids=${searchQuery}`; 
 
             const response = await fetch(apiUrl);
 
             if (!response.ok) {
-                // Kontrola, zda je response OK (status 200-299)
+                // Kontrola, zda je response OK 
                 throw new Error(`Chyba HTTP: ${response.status}`);
             }
 
-            const data = await response.json(); // Převedení response na JSON
+            const data = await response.json(); 
 
             if (data && data.length > 0 && data[0].url) {
-                // Kontrola, zda API vrátilo data a URL obrázku
-                setCatImageUrl(data[0].url); // Nastavení URL obrázku do stavu
+                
+                setCatImageUrl(data[0].url); 
             } else {
-                setError("Obrázek kočky nenalezen pro zadané plemeno."); // Nastavení chyby, pokud API nevrátí obrázek
+                setError("Obrázek kočky nenalezen pro zadané plemeno."); 
             }
         } catch (error) {
             console.error("Chyba při volání API:", error);
             setError(
                 "Nepodařilo se načíst obrázek kočky. Zkuste to prosím znovu později."
-            ); // Nastavení obecné chyby
+            ); 
         } finally {
-            setIsLoading(false); // Nastavíme načítání na false, ať už API volání skončí úspěchem nebo chybou
+            setIsLoading(false); 
         }
     };
 
@@ -62,7 +60,7 @@ const CatImageFinder = () => {
             <h1>Hledání obrázků koček</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="breed">
-                    Zadejte plemeno kočky (např. bengal, siamese):
+                    Zadejte plemeno kočky (např. abob, beng):
                 </label>
                 <input
                     type="text"
@@ -71,12 +69,14 @@ const CatImageFinder = () => {
                     onChange={handleInputChange}
                     placeholder="Plemeno kočky"
                 />
-                <button className="button" type="submit">Hledej kočku!</button>
+                <button className="button" type="submit">
+                    Hledej kočku!
+                </button>
             </form>
             {isLoading && <p>Načítám obrázek...</p>}{" "}
-            {/* Zobrazení "Loading..." během načítání */}
+            
             {error && <p className="error">{error}</p>}{" "}
-            {/* Zobrazení chybové zprávy, pokud nastane chyba */}
+            
             {catImageUrl && (
                 <div className="imageContainer">
                     <h2>Tady je kočka!</h2>

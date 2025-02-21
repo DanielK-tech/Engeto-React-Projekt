@@ -13,11 +13,11 @@ const [activeButtonIndex, setActiveButtonIndex] = useState(0);
         buttonTextsData[0].buttonLabel
     ); 
 
-    // 2. Funkce pro handlování kliknutí - aktualizuje text i nadpis
+    
     const handleButtonClick = (index) => {
         setArticleText(buttonTextsData[index].articleText); 
         setArticleTitle(buttonTextsData[index].buttonLabel); 
-        setActiveButtonIndex(index); // Aktualizace indexu aktivního tlačítka - NOVINKA
+        setActiveButtonIndex(index); 
     };
 
     return (
