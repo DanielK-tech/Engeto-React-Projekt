@@ -72,4 +72,21 @@ h2{
   width: 100%;
   display: flex; 
   justify-content: center;
+} 
+
+/************************ 
+      Tlačítko
+*********************/
+
+.button{ 
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--Conteiner-color);
+    color: var(--text-Color);
+    cursor: pointer;
+    transition:  0.5s;
+} 
+.button.active{ 
+    background-color: var(--active-button);
 }

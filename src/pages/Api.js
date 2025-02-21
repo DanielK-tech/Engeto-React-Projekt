@@ -29,7 +29,7 @@ const CatImageFinder = () => {
 
         try {
             // 5. Volání The Cat API pomocí fetch
-            const apiKey = "TVŮJ_API_KLÍČ_ZDE"; // **SEM VLOŽ SVŮJ API KLÍČ, POKUD HO BUDEŠ MÍT** (pro TheCatAPI není vždy nutný, pro jiné API může být povinný)
+            // const apiKey = "TVŮJ_API_KLÍČ_ZDE"; 
             const apiUrl = `https://api.thecatapi.com/v1/images/search?limit=1&breed_ids=${searchQuery}`; // API endpoint s dynamickým searchQuery
 
             const response = await fetch(apiUrl);

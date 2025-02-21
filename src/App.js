@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react"; 
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 /** Styly **/
 import "./App.css";
 /** Obrázky */
@@ -9,9 +10,10 @@ import Allpets from "./data";
 import Pets from "./components/Pets";
 import PetsInfo from "./components/PetsInfo";
 import Api from "./pages/Api"
-import ApiList from "./pages/ApiGenrator"
+import ApiList from "./pages/ApiGenrator" 
+import RouteButton from "./components/RouteButton";
 
-const App = () => {
+const Home = () => {
     const welcomeTextRef = useRef(null);
 
     useEffect(() => {
@@ -65,15 +67,33 @@ const App = () => {
                     />
                 ))}
             </section>
-            <section className="PetsInfoSection"> 
+            <section className="PetsInfoSection">
                 <PetsInfo />
-            </section> 
-            <section className="ApiSection"> 
-                <Api />
-                <ApiList />
             </section>
+            <RouteButton />
         </div>
     );
 };
-
+const ApiSection = () => {
+    return (
+        <div className="MainContainer">
+            <h2>Kočíčí sekce</h2>
+            <section className="ApiSection">
+                <Api />
+                <ApiList />
+            </section>
+            <RouteButton />
+        </div>
+    );
+}; 
+const App = () => {
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/api" element={<ApiSection />} />
+            </Routes>
+        </Router>
+    );
+};
 export default App;
