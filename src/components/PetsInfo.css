@@ -37,6 +37,7 @@
     color: var(--text-Color);
     cursor: pointer;
     transition:  0.5s;
+    margin-bottom: 1rem;
 } 
 .button.active{ 
     background-color: var(--active-button);

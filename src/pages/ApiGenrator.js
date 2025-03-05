@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./ApiGenrator.css";
 
 const CatBreedList = () => {
     const [breeds, setBreeds] = useState([]); // Stav pro uložení seznamu plemen
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
-    const [isVisible, setIsVisible] = useState(false);
+    const [isVisible, setIsVisible] = useState(false); 
+    //dom-router 
+     const location = useLocation();
+     const navigate = useNavigate();
 
     useEffect(() => {
         const fetchBreeds = async () => {
@@ -29,11 +33,24 @@ const CatBreedList = () => {
             }
         };
 
+        // Kontrola URL při načtení komponenty
+        const isListPage = location.pathname === "/api/seznam";
+        setIsVisible(isListPage);
+
         fetchBreeds();
-    }, []);
+    }, [location.pathname]);
 
       const toggleList = () => {
-          setIsVisible(!isVisible);
+          const newVisibility = !isVisible;
+          setIsVisible(newVisibility);
+
+          // Při zobrazení seznamu změníme URL na /api/seznam, jinak se vrátíme na /api
+          // Navigace pomocí React Router
+          if (newVisibility) {
+              navigate("/api/seznam");
+          } else {
+              navigate("/api");
+          }
       };
 
     if (isLoading) {
@@ -59,7 +76,7 @@ const CatBreedList = () => {
             {isVisible && (
                 <ul className="breeds">
                     {breeds.map((breed) => (
-                        <li key={breed.id} className="breed-item">
+                        <li key={breed.id} className="breed-item ">
                             <h3>{breed.name}</h3>
                             <p>
                                 <strong>ID plemene:</strong>{" "}

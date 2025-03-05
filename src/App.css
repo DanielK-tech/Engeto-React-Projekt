@@ -2,7 +2,8 @@
   --Conteiner-color: #0f7020; 
   --box-shadow: 0 0 5px 10px rgba(224, 228, 20, 0.699);
   --card-color: rgba(225, 228, 20, 0.418);
-  --active-button: rgba(39, 202, 39, 0.548);
+  --active-button: rgba(39, 202, 39, 0.548); 
+  --yellow-color: #e1e41a;
  
 }
 
@@ -89,4 +90,20 @@ h2{
 } 
 .button.active{ 
     background-color: var(--active-button);
+} 
+/** Stránka neexistuje **/
+.not-found{ 
+  min-height: 100dvh; 
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+} 
+
+.container-of-page{ 
+  text-align: center; 
+  a{ 
+    text-decoration: none;
+    border-bottom: var(--yellow-color) 2px solid;
+    color: var(--text-Color);
+  }
 }

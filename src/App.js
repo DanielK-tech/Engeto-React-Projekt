@@ -10,7 +10,8 @@ import Allpets from "./data";
 import Pets from "./components/Pets";
 import PetsInfo from "./components/PetsInfo"; 
 import RouteButton from "./components/RouteButton";
-import  ApiSection  from "./components/ApiSection";
+import  ApiSection  from "./components/ApiSection"; 
+import PageNotFound from "./pages/PageNotFound";
 
 const Home = () => {
     const welcomeTextRef = useRef(null);
@@ -73,13 +74,15 @@ const Home = () => {
         </div>
     );
 };
- 
+ //Hlavní komponenta aplikace
 const App = () => {
     return (
         <Router>
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/api" element={<ApiSection />} />
+                <Route path="/api/seznam" element={<ApiSection />} />
+                <Route path="*" element={<PageNotFound />} />
             </Routes>
         </Router>
     );

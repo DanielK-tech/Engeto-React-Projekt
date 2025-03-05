@@ -1,3 +1,4 @@
+/** Komponenta o informacích o zvířatech **/
 import "./PetsInfo.css";
 import  { useState } from "react";
 /** data */
