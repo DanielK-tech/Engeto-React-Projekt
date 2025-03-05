@@ -1,3 +1,9 @@
+/*
+    Daniel Kolegar
+    dancek.kolegar@gmail.com
+    Discord: Daniel K, (KoliDJ)
+*/
+
 import { useEffect, useRef } from "react"; 
 import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
 /** Styly **/
