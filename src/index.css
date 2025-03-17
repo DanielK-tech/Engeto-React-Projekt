@@ -20,4 +20,23 @@
   font-family: Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif;
   background-color: var(--backgroud-Color);
   color: var(--text-Color);
+} 
+
+/************************ 
+      Tlačítko
+*********************/
+
+.button{ 
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--Conteiner-color);
+    color: var(--text-Color);
+    cursor: pointer;
+    transition:  0.5s;
+    margin-bottom: 1rem;
+} 
+.button.active{ 
+    background-color: var(--active-button);
 }
+
