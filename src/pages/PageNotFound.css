@@ -1,0 +1,16 @@
+/** Stránka neexistuje **/
+.not-found{ 
+  min-height: 100dvh; 
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+} 
+
+.container-of-page{ 
+  text-align: center; 
+  a{ 
+    text-decoration: none;
+    border-bottom: var(--yellow-color) 2px solid;
+    color: var(--text-Color);
+  }
+}

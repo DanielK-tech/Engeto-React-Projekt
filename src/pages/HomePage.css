@@ -1,21 +1,4 @@
-.MainContainer{ 
-  display: flex; 
-  align-items: center;  
-  flex-direction: column;
-  gap: 2rem;
-  width: 90%;
-  min-height: 100vh;
-  min-height: 100dvh;
-  background-color: var(--Conteiner-color);
-  h1{ 
-    margin-top: 1rem;
-  }
 
-} 
-
-h2{ 
-  margin-top: 1rem;
-}
 /** Obrázky **/
 .WelcomePicture{ 
   margin-top: 1rem;
@@ -59,12 +42,6 @@ h2{
  
 } 
 
-.ApiSection{ 
-  width: 100%;
-  display: flex; 
-  justify-content: center;
-} 
-
 /************************ 
       Tlačítko
 *********************/
@@ -81,19 +58,3 @@ h2{
 .button.active{ 
     background-color: var(--active-button);
 } 
-/** Stránka neexistuje **/
-.not-found{ 
-  min-height: 100dvh; 
-  display: flex;
-  align-items: center; 
-  justify-content: center;
-} 
-
-.container-of-page{ 
-  text-align: center; 
-  a{ 
-    text-decoration: none;
-    border-bottom: var(--yellow-color) 2px solid;
-    color: var(--text-Color);
-  }
-}

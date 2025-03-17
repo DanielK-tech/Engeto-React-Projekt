@@ -14,24 +14,24 @@ const HomePage = () => {
     const welcomeTextRef = useRef(null);
 
     useEffect(() => {
-        const paragraph = welcomeTextRef.current; // Získání reference na <p> element
+        const paragraph = welcomeTextRef.current; 
         if (paragraph) {
             const text = paragraph.textContent;
-            const words = text.split(" "); // Rozdělíme text na pole slov
+            const words = text.split(" "); 
             if (words.length > 0) {
-                // Kontrola, zda odstavec obsahuje slova
-                const randomIndex = Math.floor(Math.random() * words.length); // Vygenerujeme náhodný index
-                const randomWord = words[randomIndex]; // Získáme náhodné slovo
+                
+                const randomIndex = Math.floor(Math.random() * words.length); 
+                const randomWord = words[randomIndex]; 
                 // červené slovo
                 const highlightedText = words
                     .map((word, index) => {
                         if (index === randomIndex) {
                             return `<span style="color: red">${word}</span>`;
                         } else {
-                            return word; // Ostatní slova necháme beze změny
+                            return word; 
                         }
                     })
-                    .join(" "); // Spojíme slova zpět do textu
+                    .join(" "); 
 
                 paragraph.innerHTML = highlightedText;
             }
