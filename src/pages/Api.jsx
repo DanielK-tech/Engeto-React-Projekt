@@ -3,13 +3,10 @@ import React, { useState } from "react";
 
 
 const CatImageFinder = () => {
-    // 1. Stav pro input pole (klíčové slovo pro vyhledávání)
-    const [searchQuery, setSearchQuery] = useState("");
-    // 2. Stav pro URL obrázku kočky (z API odpovědi)
-    const [catImageUrl, setCatImageUrl] = useState(null);
-    // 3. Stav pro zprávu o chybě (pokud API volání selže)
-    const [error, setError] = useState(null);
-    // 4. Stav pro indikaci načítání dat (pro zobrazení "Loading...")
+    
+    const [searchQuery, setSearchQuery] = useState("");    
+    const [catImageUrl, setCatImageUrl] = useState(null);    
+    const [error, setError] = useState(null);    
     const [isLoading, setIsLoading] = useState(false);
 
     
@@ -32,8 +29,7 @@ const CatImageFinder = () => {
 
             const response = await fetch(apiUrl);
 
-            if (!response.ok) {
-                // Kontrola, zda je response OK 
+            if (!response.ok) {               
                 throw new Error(`Chyba HTTP: ${response.status}`);
             }
 

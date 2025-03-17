@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import "./ApiGenrator.css";
 
 const CatBreedList = () => {
-    const [breeds, setBreeds] = useState([]); // Stav pro uložení seznamu plemen
+    const [breeds, setBreeds] = useState([]); 
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [isVisible, setIsVisible] = useState(false); 
@@ -24,7 +24,7 @@ const CatBreedList = () => {
                     throw new Error(`Chyba HTTP: ${response.status}`);
                 }
                 const data = await response.json();
-                setBreeds(data); // Uložení seznamu plemen do stavu
+                setBreeds(data); 
             } catch (error) {
                 console.error("Chyba při načítání plemen:", error);
                 setError("Nepodařilo se načíst seznam plemen koček.");
@@ -32,8 +32,7 @@ const CatBreedList = () => {
                 setIsLoading(false);
             }
         };
-
-        // Kontrola URL při načtení komponenty
+       
         const isListPage = location.pathname === "/api/seznam";
         setIsVisible(isListPage);
 
@@ -43,9 +42,7 @@ const CatBreedList = () => {
       const toggleList = () => {
           const newVisibility = !isVisible;
           setIsVisible(newVisibility);
-
-          // Při zobrazení seznamu změníme URL na /api/seznam, jinak se vrátíme na /api
-          // Navigace pomocí React Router
+        
           if (newVisibility) {
               navigate("/api/seznam");
           } else {

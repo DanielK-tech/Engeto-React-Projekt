@@ -1,6 +1,6 @@
 import Api from "../pages/Api";
 import ApiList from "../pages/ApiGenrator";
-import RouteButton from "./RouteButton";
+import RouteButton from "../components/RouteButton";
 
 const ApiSection = () => {
     return (

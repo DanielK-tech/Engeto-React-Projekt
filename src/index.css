@@ -1,6 +1,11 @@
 :root{ 
   --backgroud-Color: #3f8506; ;
   --text-Color: #e6b224;
+   --Conteiner-color: #0f7020; 
+  --box-shadow: 0 0 5px 10px rgba(224, 228, 20, 0.699);
+  --card-color: rgba(225, 228, 20, 0.418);
+  --active-button: rgba(39, 202, 39, 0.548); 
+  --yellow-color: #e1e41a;
 }
 * { 
   padding: 0;

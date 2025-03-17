@@ -1,32 +1,22 @@
-/*
-    Daniel Kolegar
-    dancek.kolegar@gmail.com
-    Discord: Daniel K, (KoliDJ)
-*/
-
-import { useEffect, useRef } from "react"; 
-import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
+import { useEffect, useRef } from "react";
 /** Styly **/
-import "./App.css";
+import "./HomePage.css";
 /** Obrázky */
-import WelcomePicture from "./img/first.jpg";
+import WelcomePicture from "../img/first.jpg";
 /** Data */
-import Allpets from "./data";
+import Allpets from "../data/data";
 /**Komponenty */
-import Pets from "./components/Pets";
-import PetsInfo from "./components/PetsInfo"; 
-import RouteButton from "./components/RouteButton";
-import  ApiSection  from "./components/ApiSection"; 
-import PageNotFound from "./pages/PageNotFound";
+import RouteButton from "../components/RouteButton";
+import PetsInfo from "../components/PetsInfo"; 
+import Pets from "../components/Pets";
 
-const Home = () => {
+const HomePage = () => {
     const welcomeTextRef = useRef(null);
 
     useEffect(() => {
         const paragraph = welcomeTextRef.current; // Získání reference na <p> element
         if (paragraph) {
-            
-            const text = paragraph.textContent; 
+            const text = paragraph.textContent;
             const words = text.split(" "); // Rozdělíme text na pole slov
             if (words.length > 0) {
                 // Kontrola, zda odstavec obsahuje slova
@@ -36,14 +26,14 @@ const Home = () => {
                 const highlightedText = words
                     .map((word, index) => {
                         if (index === randomIndex) {
-                            return `<span style="color: red">${word}</span>`; 
+                            return `<span style="color: red">${word}</span>`;
                         } else {
                             return word; // Ostatní slova necháme beze změny
                         }
                     })
                     .join(" "); // Spojíme slova zpět do textu
 
-                paragraph.innerHTML = highlightedText; 
+                paragraph.innerHTML = highlightedText;
             }
         }
     }, []);
@@ -80,17 +70,5 @@ const Home = () => {
         </div>
     );
 };
- //Hlavní komponenta aplikace
-const App = () => {
-    return (
-        <Router>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/api" element={<ApiSection />} />
-                <Route path="/api/seznam" element={<ApiSection />} />
-                <Route path="*" element={<PageNotFound />} />
-            </Routes>
-        </Router>
-    );
-};
-export default App;
+
+export default HomePage;

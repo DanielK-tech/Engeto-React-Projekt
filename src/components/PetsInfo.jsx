@@ -2,7 +2,7 @@
 import "./PetsInfo.css";
 import  { useState } from "react";
 /** data */
-import buttonTextsData  from "./buttonTextData";
+import buttonTextsData  from "../data/buttonTextData";
 
 const PetsInfo = () => {    
 const [activeButtonIndex, setActiveButtonIndex] = useState(0);

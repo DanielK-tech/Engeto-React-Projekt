@@ -1,7 +1,7 @@
-import dashund from "./img/dashund.jpg";
-import agama from "./img/agama.jpg";
-import hamster from "./img/hamster.jpg";
-import guineaPig from "./img/quienaPig.jpg";
+import dashund from "../img/dashund.jpg";
+import agama from "../img/agama.jpg";
+import hamster from "../img/hamster.jpg";
+import guineaPig from "../img/quienaPig.jpg";
 
 const Allpets = [ 
     { 
