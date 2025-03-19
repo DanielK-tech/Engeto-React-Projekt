@@ -1,5 +1,5 @@
 /** Komponenta o informacích o zvířatech **/
-import "./PetsInfo.css";
+import "../styles/petsInfo.css";
 import  { useState } from "react";
 /** data */
 import buttonTextsData  from "../data/buttonTextData";

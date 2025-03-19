@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 /** Styly **/
-import "./HomePage.css";
+import "../styles/homePage.css";
 /** Obrázky */
 import WelcomePicture from "../img/first.jpg";
 /** Data */

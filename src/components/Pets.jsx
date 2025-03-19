@@ -1,5 +1,5 @@
 /** styl */
-import "./Pets.css";
+import "../styles/pets.css";
 
 const Pets = ({image, name, text}) => {
     return (

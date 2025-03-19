@@ -2,7 +2,7 @@ import Api from "../pages/Api";
 import ApiList from "../pages/ApiGenrator";
 import RouteButton from "../components/RouteButton";
 //
-import "./ApiSection.css";
+import "../styles/apiSection.css";
 
 const ApiSection = () => {
     return (
